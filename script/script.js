@@ -24,3 +24,30 @@ inputNameHandler = e => {
         }
     }
 };
+
+moveBlock = document.querySelector(".moveBlock");
+let left = 0;
+let up = 0;
+document.onkeydown = function(event) {
+    console.log(event)
+    if (event.key == "ArrowRight") {
+        moveBlock.style.left = left + "px";
+        left++
+    }
+    if (event.key == "ArrowRight" && event.shiftKey == true) {
+        moveBlock.style.left = left * 2 + "px";
+        left++
+    }
+    if (event.key == "ArrowLeft") {
+        moveBlock.style.left = left + "px";
+        left--
+    }
+    if (event.key == "ArrowDown") {
+        moveBlock.style.top = up + "px";
+        up++
+    }
+    if (event.key == "ArrowUp") {
+        moveBlock.style.top = up + "px";
+        up--
+    }
+}
